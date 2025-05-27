@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Customer Analytics Dashboard</h1>
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Total Purchases</th>
+            <th>Amount Spent</th>
+            <th>Customer Since</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer['CustomerID'] }}</td>
+            <td>{{ customer['Total Purchases'] }}</td>
+            <td>${{ customer['Amount Spent'] }}</td>
+            <td>{{ customer['Customer Since'] }}</td>
+            <td>{{ customer['Age'] }}</td>
+            <td>{{ customer['Gender'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
